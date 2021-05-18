@@ -8,6 +8,7 @@ const cors = require('cors')
 const app = express();
 app.use(cors());
 
+const port = process.env.PORT || 4001
 
 const dotenv = require('dotenv');
 const mongoose = require('mongoose')
@@ -22,4 +23,4 @@ app.use('/api/listings', listingRoute );
 
 app.use('/api/user', userRoutes )
 
-app.listen(4001,()=> console.log('server running on port 4001!') )
+app.listen(port,()=> console.log('server running on port 4001 ${port}!') )
